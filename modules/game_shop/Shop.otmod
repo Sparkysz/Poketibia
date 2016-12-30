@@ -1,0 +1,13 @@
+Module
+  name: Shop
+  description: Shop
+  author: Viktor
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ Shop ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

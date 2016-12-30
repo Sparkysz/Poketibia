@@ -1,0 +1,43 @@
+MainWindow
+  id: rankNameGuildWindow
+  text: Rank Name
+  height: 165
+  width: 260
+  visible: false
+  Label
+    id: rankNameGuildLabel1
+    text: Rank Old Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: rankNameGuildText1
+    anchors.top: rankNameGuildLabel1.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Label
+    id: rankNameGuildLabel2
+    text: Rank New Name
+    anchors.top: rankNameGuildText1.top
+    anchors.left: parent.left
+    margin-top: 30
+  TextEdit
+    id: rankNameGuildText2
+    anchors.top: rankNameGuildLabel2.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: rankNameGuild()

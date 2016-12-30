@@ -1,0 +1,12 @@
+MainWindow
+  id: onAirChannel
+  !text: tr('Filmando...')
+  size: 100 100
+  opacity: 2
+    
+  Button
+    !text: tr('Desligar')
+    image-color: #8470FF
+    width: 64
+    height: 15
+    @onClick: modules.tvCam.termiChannelOnAir()

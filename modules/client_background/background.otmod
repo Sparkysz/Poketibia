@@ -1,0 +1,10 @@
+Module
+  name: client_background
+  description: Handles the background of the login screen
+  author: edubart
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ background ]
+  dependencies: [ client_topmenu ]
+  @onLoad: init()
+  @onUnload: terminate()

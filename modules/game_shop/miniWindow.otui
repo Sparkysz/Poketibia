@@ -1,0 +1,17 @@
+MainWindow
+  id: miniWindown
+  text: PSR Shop
+  height: 110
+  width: 350
+  visible: false
+  Label
+    id: textShop
+    !text: tr('Você não tem diamonds suficientes para essa compra.')
+    anchors.top: parent.top
+    anchors.left: parent.left
+  Button
+    id: buttonOk
+    text: Ok
+    width: 320
+    anchors.bottom: parent.bottom
+    @onClick: modules.Shop.hideMiniWindow()

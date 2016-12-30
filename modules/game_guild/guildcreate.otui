@@ -1,0 +1,31 @@
+MainWindow
+  id: createGuildWindow
+  text: Create Guild
+  height: 110
+  width: 260
+  visible: false
+  Label
+    id: createGuildLabel
+    text: Guild Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: createGuildText
+    anchors.top: createGuildLabel.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: createGuild()

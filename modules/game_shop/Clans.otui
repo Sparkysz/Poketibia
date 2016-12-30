@@ -1,0 +1,225 @@
+Panel
+  HorizontalSeparator
+    height: 7
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    margin-top: -12
+
+  VerticalScrollBar
+    id: scrollBar
+    step: 50
+    pixels-scroll: true
+    anchors.top: parent.top
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-bottom: 30
+    margin-top: 60
+
+  ScrollablePanel
+    vertical-scrollbar: scrollBar
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: scrollBar.left
+    anchors.bottom: parent.bottom
+    margin-right: 3
+    margin-bottom: 30
+    margin-top: 60
+
+    Button1
+      id: 1
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/1
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 0
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 1
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/1
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 50
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 2
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/2
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 100
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 2
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/2
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 150
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 3
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/3
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 200
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 3
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/3
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 250
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 4
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/4
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 300
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 4
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/4
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 350
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 5
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/5
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 400
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 5
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/5
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 450
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 6
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/6
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 500
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 6
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/6
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 550
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 7
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/7
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 600
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 7
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/7
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 650
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 8
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/8
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 700
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 8
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/8
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 750
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 9
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan1/9
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 800
+      @onClick: g_game.talk("!vip60")
+
+    Button1
+      id: 9
+      !tooltip: tr('Arco-Íris')
+      image-source: /images/shop/clan5/9
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 850
+      @onClick: g_game.talk("!vip60")

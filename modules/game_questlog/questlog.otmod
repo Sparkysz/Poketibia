@@ -1,0 +1,9 @@
+Module
+  name: game_questlog
+  description: View game quests status
+  author: edubart
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ questlog ]
+  @onLoad: init()
+  @onUnload: terminate()

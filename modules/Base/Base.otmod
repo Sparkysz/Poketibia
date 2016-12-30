@@ -1,0 +1,13 @@
+Module
+  name: Base
+  description: ...
+  author: ...
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ Base ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

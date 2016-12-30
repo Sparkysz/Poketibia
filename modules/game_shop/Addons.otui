@@ -1,0 +1,223 @@
+Panel
+  HorizontalSeparator
+    height: 7
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    margin-top: -12
+
+  VerticalScrollBar
+    id: scrollBar
+    step: 50
+    pixels-scroll: true
+    anchors.top: parent.top
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-bottom: 30
+    margin-top: 60
+
+  ScrollablePanel
+    vertical-scrollbar: scrollBar
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: scrollBar.left
+    anchors.bottom: parent.bottom
+    margin-right: 3
+    margin-bottom: 30
+    margin-top: 60
+
+    Button1
+      id: 2
+      !tooltip: tr('Arcanine')
+      image-source: /images/shop/shop/2
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 0
+      @onClick: g_game.talk("@buy Arcanine") 
+
+    Button1
+      id: 3
+      !tooltip: tr('Blastoise')
+      image-source: /images/shop/shop/3
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 50
+      @onClick: g_game.talk("@buy Blastoise") 
+
+    Button1
+      id: 4
+      !tooltip: tr('Charizard')
+      image-source: /images/shop/shop/4
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 100
+      @onClick: g_game.talk("@buy Charizard") 
+
+    Button1
+      id: 5
+      !tooltip: tr('Electabuzz')
+      image-source: /images/shop/shop/5
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 150
+      @onClick: g_game.talk("@buy Electabuzz") 
+
+    Button1
+      id: 6
+      !tooltip: tr('Fasio')
+      image-source: /images/shop/shop/6
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 200
+
+    Button1
+      id: 7
+      !tooltip: tr('Fasio')
+      image-source: /images/shop/shop/7
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 250
+
+    Button1
+      id: 8
+      !tooltip: tr('Girafarig')
+      image-source: /images/shop/shop/8
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 300
+      @onClick: g_game.talk("@buy Girafarig") 
+
+    Button1
+      id: 10
+      !tooltip: tr('Shiny Hypno')
+      image-source: /images/shop/shop/10
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 350
+      @onClick: g_game.talk("@buy Shiny Hypno") 
+
+    Button1
+      id: 11
+      !tooltip: tr('Shiny Jolteon')
+      image-source: /images/shop/shop/11
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 400
+      @onClick: g_game.talk("@buy Shiny Jolteon") 
+
+    Button1
+      id: 12
+      !tooltip: tr('Kingdra')
+      image-source: /images/shop/shop/12
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 450
+      @onClick: g_game.talk("@buy Kingdra") 
+
+    Button1
+      id: 13
+      !tooltip: tr('Lapras')
+      image-source: /images/shop/shop/13
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 500
+      @onClick: g_game.talk("@buy Lapras") 
+
+    Button1
+      id: 14
+      !tooltip: tr('Shiny Nidoking')
+      image-source: /images/shop/shop/14
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 550
+      @onClick: g_game.talk("@buy Shiny Nidoking") 
+
+    Button1
+      id: 15
+      !tooltip: tr('Scizor')
+      image-source: /images/shop/shop/15
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 600
+      @onClick: g_game.talk("@buy Scizor") 
+
+    Button1
+      id: 16
+      !tooltip: tr('Shiny Golem')
+      image-source: /images/shop/shop/16
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 650
+      @onClick: g_game.talk("@buy Shiny Golem") 
+
+    Button1
+      id: 17
+      !tooltip: tr('Skarmory')
+      image-source: /images/shop/shop/17
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 700
+      @onClick: g_game.talk("@buy Skarmory") 
+
+    Button1
+      id: 18
+      !tooltip: tr('Slowking')
+      image-source: /images/shop/shop/18
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 750
+      @onClick: g_game.talk("@buy Slowking") 
+
+    Button1
+      id: 19
+      !tooltip: tr('Sudowoodo')
+      image-source: /images/shop/shop/19
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 800
+      @onClick: g_game.talk("@buy Sudowoodo") 
+
+    Button1
+      id: 20
+      !tooltip: tr('Shiny Vaporeon')
+      image-source: /images/shop/shop/20
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 850
+      @onClick: g_game.talk("@buy Shiny Vaporeon") 

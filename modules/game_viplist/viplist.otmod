@@ -1,0 +1,9 @@
+Module
+  name: game_viplist
+  description: Manage vip list window
+  author: baxnie, edubart
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ viplist ]
+  @onLoad: init()
+  @onUnload: terminate()

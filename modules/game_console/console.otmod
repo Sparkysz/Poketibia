@@ -1,0 +1,9 @@
+Module
+  name: game_console
+  description: Manage chat window
+  author: edubart, andrefaramir, baxnie, sn4ake, BeniS
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ console ]
+  @onLoad: init()
+  @onUnload: terminate()

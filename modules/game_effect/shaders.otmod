@@ -1,0 +1,13 @@
+Module
+  name: ControlShaders
+  description: Control Shaders
+  author: Slicer (xTibia)
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ shaders ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

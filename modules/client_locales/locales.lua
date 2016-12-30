@@ -1,0 +1,316 @@
+dofile 'neededtranslations'
+
+-- private variables
+local defaultLocaleName = 'en'
+local installedLocales
+local currentLocale
+
+
+function sendLocale(localeName)
+  local protocolGame = g_game.getProtocolGame()
+  if protocolGame then
+    protocolGame:sendExtendedOpcode(ExtendedIds.Locale, localeName)
+    return true
+  end
+  return false
+end
+
+
+function createWindow()
+  localesWindow = g_ui.displayUI('locales')
+  local localesPanel = localesWindow:getChildById('localesPanel')
+  local layout = localesPanel:getLayout()
+  local spacing = layout:getCellSpacing()
+  local size = layout:getCellSize()
+
+  local count = 0
+  for name,locale in pairs(installedLocales) do
+    local widget = g_ui.createWidget('LocalesButton', localesPanel)
+    widget:setImageSource('/images/flags/' .. name .. '')
+    widget:setText(locale.languageName)
+    widget.onClick = function() selectFirstLocale(name) end
+    count = count + 1
+  end
+
+  count = math.max(1, math.min(count, 3))
+  localesPanel:setWidth(size.width*count + spacing*(count-1))
+
+  addEvent(function() addEvent(function() localesWindow:raise() localesWindow:focus() end) end)
+end
+
+local skins = {"None", "Alakazam", "Arcanine", "Blastoise", "Charizard", "Crobat", "Electabuzz", "Farfetchd", "Gyarados", "Hitmonchan", "Jynx", "Lapras", "Marowak", "Droganite", "Pidgeot", "Scizor"}
+function createWindowSkin()
+  localesWindow = g_ui.displayUI('locales2')
+  local localesPanel = localesWindow:getChildById('localesPanel')
+  local layout = localesPanel:getLayout()
+  local spacing = layout:getCellSpacing()
+  local size = layout:getCellSize()
+
+  local count = 0
+  for name, locale in pairs(skins) do
+  
+          if locale == "Scizor" then
+              local widget = g_ui.createWidget('LocalesButton', localesPanel)
+              widget:setImageSource('/images/skins/None')
+              widget:setText("Pagina 2")
+              widget.onClick =  function() setSkin2(localesWindow) end
+              break
+          end
+          
+    local widget = g_ui.createWidget('LocalesButton', localesPanel)
+    widget:setImageSource('/images/skins/' .. locale .. '')
+    widget:setText(locale)
+    widget.onClick =  function() setSkin(locale, localesWindow) end
+    count = count + 1
+  end 
+
+  localesPanel:setWidth(size.width * 8)
+  localesPanel:setHeight(size.height * 20)
+
+  addEvent(function() addEvent(function() localesWindow:raise() localesWindow:focus() end) end)
+end
+local skins2 = {"None", "Scizor", "Scyther", "Smeargle", "Steelix", "Venusaur", "GardeStrike_Female", "GardeStrike_Male", "Malefic_Female", "Malefic_Male", "Naturia_Female", "Naturia_Male", "Orebound_Female", "Orebound_Male", "PsyCraft_Female", "PsyCraft_Male"}
+
+function createWindowSkin2()
+  localesWindow = g_ui.displayUI('locales2')
+  local localesPanel = localesWindow:getChildById('localesPanel')
+  local layout = localesPanel:getLayout()
+  local spacing = layout:getCellSpacing()
+  local size = layout:getCellSize()
+
+  local count = 0
+  for name, locale in pairs(skins2) do
+  
+            if locale == "PsyCraft_Male" then
+              local widget = g_ui.createWidget('LocalesButton', localesPanel)
+              widget:setImageSource('/images/skins/None')
+              widget:setText("Pagina 3")
+              widget.onClick =  function() setSkin3(localesWindow) end
+              break
+          end
+          
+    local widget = g_ui.createWidget('LocalesButton', localesPanel)
+    widget:setImageSource('/images/skins/' .. locale .. '')
+    widget:setText(locale)
+    widget.onClick =  function() setSkin(locale, localesWindow) end
+    count = count + 1
+         if locale == "None" then
+              widget:setImageSource('/images/skins/None')
+              widget:setText("Pagina 1")
+              widget.onClick =  function() setSkin4(localesWindow) end
+         end
+  end 
+
+  localesPanel:setWidth(size.width * 8)
+  localesPanel:setHeight(size.height * 20)
+
+  addEvent(function() addEvent(function() localesWindow:raise() localesWindow:focus() end) end)
+end
+local skins3 = {"PsyCraft_Male", "Raibolt_Female", "Raibolt_Male", "Seavell_Female", "Seavell_Male", "Volcanic_Female", "Volcanic_Male", "Wingeon_Female", "Wingeon_Male"}
+function createWindowSkin3()
+  localesWindow = g_ui.displayUI('locales2')
+  local localesPanel = localesWindow:getChildById('localesPanel')
+  local layout = localesPanel:getLayout()
+  local spacing = layout:getCellSpacing()
+  local size = layout:getCellSize()
+
+  local count = 0
+  for name, locale in pairs(skins3) do
+    
+    local widget = g_ui.createWidget('LocalesButton', localesPanel)
+    widget:setImageSource('/images/skins/' .. locale .. '')
+    widget:setText(locale)
+    widget.onClick =  function() setSkin(locale, localesWindow) end
+    count = count + 1
+              if locale == "Wingeon_Male" then
+                  local widget = g_ui.createWidget('LocalesButton', localesPanel)
+                  widget:setImageSource('/images/skins/None')
+                  widget:setText("Pagina 2")
+                  widget.onClick =  function() setSkin2(localesWindow) end
+              end
+  end 
+
+  localesPanel:setWidth(size.width * 8)
+  localesPanel:setHeight(size.height * 20)
+
+  addEvent(function() addEvent(function() localesWindow:raise() localesWindow:focus() end) end)
+end
+
+function setSkin(name, localesWindow)
+   modules.game_interface.getRightPanel():setImageSource('/images/skins/' .. name .. '')
+    if modules.game_interface.getLeftPanel():isVisible() then
+       modules.game_interface.getLeftPanel():setImageSource('/images/skins/' .. name .. '')
+    end
+   localesWindow:destroy()
+   modules.client_options.hide()
+end
+function setSkin2(localesWindow)
+   localesWindow:destroy()
+   createWindowSkin2()
+end
+function setSkin3(localesWindow)
+   localesWindow:destroy()
+   createWindowSkin3()
+end
+function setSkin4(localesWindow)
+   localesWindow:destroy()
+   createWindowSkin()
+end
+
+----------------/\
+function selectFirstLocale(name)
+  if localesWindow then
+    localesWindow:destroy()
+    localesWindow = nil
+  end
+  if setLocale(name) then
+    g_modules.reloadModules()
+  end
+end
+
+-- hooked functions
+function onGameStart()
+  sendLocale(currentLocale.name)
+end
+
+function onExtendedLocales(protocol, opcode, buffer)
+  local locale = installedLocales[buffer]
+  if locale and setLocale(locale.name) then
+    g_modules.reloadModules()
+  end
+end
+
+-- public functions
+function init()
+  installedLocales = {}
+
+  installLocales('/locales')
+
+  local userLocaleName = g_settings.get('locale', 'false')
+  if userLocaleName ~= 'false' and setLocale(userLocaleName) then
+    pdebug('Using configured locale: ' .. userLocaleName)
+  else
+    setLocale(defaultLocaleName)
+    connect(g_app, { onRun = createWindow })
+  end
+
+  ProtocolGame.registerExtendedOpcode(ExtendedIds.Locale, onExtendedLocales)
+  connect(g_game, { onGameStart = onGameStart })
+end
+
+function terminate()
+  installedLocales = nil
+  currentLocale = nil
+
+  ProtocolGame.unregisterExtendedOpcode(ExtendedIds.Locale)
+  disconnect(g_app, { onRun = createWindow })
+  disconnect(g_game, { onGameStart = onGameStart })
+end
+
+function generateNewTranslationTable(localename)
+  local locale = installedLocales[localename]
+  for _i,k in pairs(neededTranslations) do
+    local trans = locale.translation[k]
+    k = k:gsub('\n','\\n')
+    k = k:gsub('\t','\\t')
+    k = k:gsub('\"','\\\"')
+    if trans then
+      trans = trans:gsub('\n','\\n')
+      trans = trans:gsub('\t','\\t')
+      trans = trans:gsub('\"','\\\"')
+    end
+    if not trans then
+      print('    ["' .. k .. '"]' .. ' = false,')
+    else
+      print('    ["' .. k .. '"]' .. ' = "' .. trans .. '",')
+    end
+  end
+end
+
+function installLocale(locale)
+  if not locale or not locale.name then
+    error('Unable to install locale.')
+  end
+
+  if _G.allowedLocales and not _G.allowedLocales[locale.name] then return end
+
+  if locale.name ~= defaultLocaleName then
+    local updatesNeeded = 0
+    for _i,k in pairs(neededTranslations) do
+      if locale.translation[k] == nil then
+        updatesNeeded = updatesNeeded + 1
+      end
+    end
+
+    if updatesNeeded > 0 then
+      pdebug('Locale \'' .. locale.name .. '\' is missing ' .. updatesNeeded .. ' translations.')
+    end
+  end
+
+  local installedLocale = installedLocales[locale.name]
+  if installedLocale then
+    for word,translation in pairs(locale.translation) do
+      installedLocale.translation[word] = translation
+    end
+  else
+    installedLocales[locale.name] = locale
+  end
+end
+
+function installLocales(directory)
+  dofiles(directory)
+end
+
+function setLocale(name)
+  local locale = installedLocales[name]
+  if locale == currentLocale then return end
+  if not locale then
+    pwarning("Locale " .. name .. ' does not exist.')
+    return false
+  end
+  if currentLocale then
+    sendLocale(locale.name)
+  end
+  currentLocale = locale
+  g_settings.set('locale', name)
+  if onLocaleChanged then onLocaleChanged(name) end
+  return true
+end
+
+function getInstalledLocales()
+  return installedLocales
+end
+
+function getCurrentLocale()
+  return currentLocale
+end
+
+-- global function used to translate texts
+function _G.tr(text, ...)
+  if currentLocale then
+    if tonumber(text) then
+      -- todo: use locale information to calculate this. also detect floating numbers
+      local out = ''
+      local number = tostring(text):reverse()
+      for i=1,#number do
+        out = out .. number:sub(i, i)
+        if i % 3 == 0 and i ~= #number then
+          out = out .. ','
+        end
+      end
+      return out:reverse()
+    elseif tostring(text) then
+      local translation = currentLocale.translation[text]
+      if not translation then
+        if translation == nil then
+          if currentLocale.name ~= defaultLocaleName then
+            pdebug('Unable to translate: \"' .. text .. '\"')
+          end
+        end
+        translation = text
+      end
+      return string.format(translation, ...)
+    end
+  end
+  return text
+end

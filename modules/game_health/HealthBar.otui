@@ -1,0 +1,211 @@
+CombatBox < UICheckBox
+  size: 20 20
+  image-clip: 0 0 20 20
+
+  $checked:
+    image-clip: 0 20 20 20
+
+FightOffensiveBox < CombatBox
+  image-source: /images/ui/pxg/fightoffensive
+FightBalancedBox < CombatBox
+  image-source: /images/ui/pxg/fightbalanced
+FightDefensiveBox < CombatBox
+  image-source: /images/ui/pxg/fightdefensive
+
+InventoryItem < Item
+
+LegSlot < InventoryItem
+  id: slot7
+  image-source: /images/ui/pxg/normalSlot
+  &position: {x=65535, y=7, z=0}
+
+FeetSlot < InventoryItem
+  id: slot8
+  image-source: /images/ui/pxg/pokeSlot
+  &position: {x=65535, y=8, z=0}
+
+FingerSlot < InventoryItem
+  id: slot9
+  image-souce: /images/ui/pxg/normalSlot
+  &position: {x=65535, y=9, z=0}
+
+BodySlot < InventoryItem
+  id: slot4
+  image-source: /images/ui/pxg/normalSlot
+  &position: {x=65535, y=4, z=0}
+
+HealthBar < ProgressBar
+  id: healthBar
+  width: 110
+  height: 17
+  !text: '0 / 0'
+  font: verdana-11px-rounded
+  color: #FFFFFF
+  background-color: #780505
+  anchors.top: parent.top
+  anchors.right: parent.right
+  margin-top: 2
+  margin-right: 5
+  opacity: 0.9
+
+PokeHealthBar < ProgressBar
+  id: pokeHealthBar
+  width: 109
+  height: 17
+  !text: '0 / 0'
+  font: verdana-11px-rounded
+  color: #FFFFFF
+  background-color: #053878
+  anchors.top: parent.top
+  anchors.right: parent.right
+  margin-top: 21
+  margin-right: 6
+  opacity: 0.9
+
+HealthIcon < UIButton
+  id: healthIcon
+  width: 120
+  height: 19
+  image-source: /images/ui/pxg/progressBar_red
+  image-color: white
+  focusable: false
+  margin-top: 1
+  anchors.top: parent.top
+  anchors.right: parent.right
+
+PokeHealthIcon < UIButton
+  id: pokeHealthIcon
+  width: 120
+  height: 19
+  image-source: /images/ui/pxg/progressBar_blue
+  image-color: white
+  focusable: false
+  margin-top: 20
+  anchors.top: parent.top
+  anchors.right: parent.right
+
+pbButtonIni < UIButton
+  size: 12 12
+  image-source: /images/ui/pxg/pb_acessa
+  anchors.bottom: parent.bottom
+  margin-bottom: 24
+  phantom: true
+  focusable: false
+  margin-left: 73
+  anchors.left: parent.left
+
+pbButton < pbButtonIni
+  anchors.left: prev.right
+  margin-left: 2
+
+heartButton < UIButton
+  size: 16 15
+  image-source: /images/ui/pxg/HealthHeart
+  anchors.left: parent.left
+  margin-left: 45
+  phantom: true
+  focusable: false
+
+PokeheartButton < UIButton
+  size: 16 15
+  image-source: /images/ui/pxg/PokeHealthHeart
+  anchors.left: parent.left
+  margin-left: 45
+  phantom: true
+  focusable: false
+
+OrderIcon < Item
+  size: 35 35
+  image-source: /images/ui/pxg/Order
+  anchors.bottom: parent.bottom
+  anchors.right: parent.right
+  phantom: true
+  focusable: false
+
+ghostButton < UIButton
+  id: invButton
+  size: 35 35
+  image-source: /images/ui/pxg/invSlot
+  anchors.fill: LegSlot
+  focusable: false
+  phantom: true
+
+MiniWindow
+  id: barWindow
+  icon: /images/ui/pxg/topMenu_icons/pokemon_icon
+  !text: tr('Health Info')
+  height: 105
+  @onClose: onMiniWindowClose()
+  &save: true
+  
+  UIButton
+    id: checkButton
+    anchors.top: minimizeButton.top
+    anchors.right: minimizeButton.right
+    margin-right: 16
+    size: 14 14
+    image-source: /modules/game_health/img/checklove
+    image-clip: 0 0 14 14
+    @onClick: g_game.talk('!check')
+
+    $hover:
+      image-clip: 0 14 14 14
+
+    $pressed:
+      image-clip: 0 14 14 14
+
+  UIButton
+    id: loveButton
+    anchors.top: checkButton.top
+    anchors.right: checkButton.right
+    margin-right: 16
+    size: 14 14
+    image-source: /modules/game_health/img/checklove
+    image-clip: 14 0 14 14
+    @onClick: g_game.talk('!love')
+
+    $hover:
+      image-clip: 14 14 14 14
+
+    $pressed:
+      image-clip: 14 14 14 14
+
+  MiniWindowContents
+    HealthBar
+    HealthIcon
+    PokeHealthBar
+    PokeHealthIcon
+    LegSlot
+      anchors.top: parent.top
+      anchors.left: parent.left
+    FeetSlot
+      anchors.bottom: parent.bottom
+      anchors.left: parent.left
+    FingerSlot
+      anchors.bottom: parent.bottom
+      anchors.left: parent.left
+      margin-left: 36
+    BodySlot
+      anchors.bottom: parent.bottom
+      anchors.right: parent.right
+    heartButton
+      anchors.top: parent.top
+      margin-top: 2
+    PokeheartButton
+      anchors.top: prev.top
+      margin-top: 19
+    ghostButton
+    OrderIcon
+    FightOffensiveBox
+      id: fightOffensiveBox
+      anchors.bottom: parent.bottom
+      anchors.right: parent.right
+      margin-right: 84
+    FightBalancedBox
+      id: fightBalancedBox
+      anchors.bottom: parent.bottom
+      anchors.left: prev.right
+    FightDefensiveBox
+      id: fightDefensiveBox
+      anchors.bottom: parent.bottom
+      anchors.left: prev.right

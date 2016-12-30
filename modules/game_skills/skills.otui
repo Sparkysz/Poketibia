@@ -1,0 +1,221 @@
+SkillFirstWidget < UIWidget
+
+SkillButton < UIButton
+  height: 21
+  margin-bottom: 2
+  &onClick: onSkillButtonClick
+
+SkillNameLabel < GameLabel
+  font: verdana-11px-monochrome
+  anchors.left: parent.left
+  anchors.top: parent.top
+  anchors.bottom: parent.bottom
+
+SkillValueLabel < GameLabel
+  id: value
+  font: verdana-11px-monochrome
+  text-align: topright
+  anchors.right: parent.right
+  anchors.top: parent.top
+  anchors.bottom: parent.bottom
+  anchors.left: prev.left
+
+SkillPercentPanel < ProgressBar
+  id: percent
+  background-color: green
+  height: 5
+  image-source: /modules/game_skills/img/skillprogress
+  image-border-left: 2
+  image-border-right: 3
+  margin-top: 15
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.top: parent.top
+  phantom: false
+
+MiniWindow
+  id: skillWindow
+  !text: tr('Skills')
+  height: 150
+  icon: /modules/game_skills/img/perfil_icon
+  @onClose: modules.game_skills.onMiniWindowClose()
+  &save: true
+
+  MiniWindowContents
+    padding-left: 5
+    padding-right: 5
+    layout: verticalBox
+
+    SkillButton
+      margin-top: 5
+      id: experience
+      height: 13
+      SkillValueLabel
+        width: 130
+        text-align: top
+        anchors.horizontalCenter: parent.horizontalCenter
+        margin-left: 15
+      UIButton
+        id: clanicon
+        width: 37
+        height: 36
+        image-source: /modules/game_skills/img/skillicon
+        anchors.top: parent.top
+        anchors.left: parent.left
+
+    SkillButton
+      margin-top: 5
+      id: experiencee
+      height: 13
+      SkillValueLabel
+        width: 130
+        font: sans-bold-16px
+        text-align: top
+        anchors.horizontalCenter: parent.horizontalCenter
+        margin-top: -6
+        margin-left: 15
+
+    SkillButton
+      id: level
+      SkillNameLabel
+        !text: tr('Experience')
+      SkillValueLabel
+      SkillPercentPanel
+        background-color: red
+
+    SkillButton
+      id: skillId6
+      SkillNameLabel
+        !text: tr('Fishing')
+      SkillValueLabel
+      SkillPercentPanel
+
+    SkillButton
+      id: skillId3
+      SkillNameLabel
+        !text: tr('Headbutt')
+      SkillValueLabel
+      SkillPercentPanel
+
+    SkillButton
+      id: health
+      height: 15
+      SkillNameLabel
+        !text: tr('Hit Points')
+      SkillValueLabel
+      visible: false
+
+    SkillButton
+      id: mana
+      height: 15
+      SkillNameLabel
+        !text: tr('Mana')
+      SkillValueLabel
+      visible: false
+
+    SkillButton
+      id: capacity
+      height: 15
+      SkillNameLabel
+        !text: tr('Capacity')
+      SkillValueLabel
+      visible: false
+
+    SkillButton
+      id: regenerationTime
+      SkillNameLabel
+        !text: tr('Regeneration Time')
+      SkillValueLabel
+      visible: false
+
+    SkillButton
+      id: offlineTraining
+      SkillNameLabel
+        !text: tr('Offline Training')
+      SkillValueLabel
+      SkillPercentPanel
+      visible: false
+
+    SkillButton
+      id: magiclevel
+      SkillNameLabel
+        !text: tr('Magic Level')
+      SkillValueLabel
+      SkillPercentPanel
+        background-color: red
+      visible: false
+
+    SkillButton
+      id: stamina
+      height: 15
+      SkillNameLabel
+        !text: tr('Stamina')
+      SkillValueLabel
+      margin-top: 8
+
+      HorizontalSeparator
+        height: 7
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: -6
+
+    SkillButton
+      id: soul
+      height: 15
+      SkillNameLabel
+        !text: tr('All Catches')
+      SkillValueLabel
+
+    SkillButton
+      id: speed
+      height: 15
+      SkillNameLabel
+        !text: tr('Speed')
+      SkillValueLabel
+
+    SkillButton
+      id: skillId1
+      margin-top: 8
+      height: 15
+      SkillNameLabel
+        !text: tr('Duels Won')
+      SkillValueLabel
+
+      HorizontalSeparator
+        height: 7
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: -6
+
+    SkillButton
+      id: skillId0
+      height: 15
+      SkillNameLabel
+        !text: tr('Duels Lost')
+      SkillValueLabel
+
+    SkillButton
+      id: skillId2
+      SkillNameLabel
+        !text: tr('Sword Fighting')
+      SkillValueLabel
+      SkillPercentPanel
+      visible: false
+
+    SkillButton
+      id: skillId4
+      SkillNameLabel
+        !text: tr('Distance Fighting')
+      SkillValueLabel
+      SkillPercentPanel
+      visible: false
+
+    SkillButton
+      id: skillId5
+      SkillNameLabel
+        !text: tr('Shielding')
+      SkillValueLabel
+      SkillPercentPanel
+      visible: false

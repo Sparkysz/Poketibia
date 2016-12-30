@@ -1,0 +1,15 @@
+Module
+  name: cdBar
+  description: cdBar pxg
+  author: Slicer (xTibia)
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  @onLoad: |
+    dofile 'cdBar'
+    cdBar.init()
+
+  @onUnload: |
+    cdBar.terminate()

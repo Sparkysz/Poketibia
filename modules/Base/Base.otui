@@ -1,0 +1,106 @@
+ModuleListLabel < Label
+  font: verdana-11px-monochrome
+  background-color: alpha
+  text-offset: 2 0
+  focusable: true
+  color: #cccccc
+
+  $focus:
+    background-color: #8A2BE2
+
+  $on:
+    background-color: #8A2BE2
+
+    
+ModuleInfoLabel < Label
+  $!first:
+    margin-top: 5
+  margin-bottom: 2
+
+ModuleValueLabel < FlatLabel
+  font: verdana-11px-antialised
+  color: #aaaaaa
+  text-offset: 2 3
+  padding-bottom: 5
+  height: 20
+  
+MainWindow
+  id: moduleManagerWindow
+  size: 642 454
+  image-source: /images/pokedex
+  image-size: 642 454
+  opacity: 2
+
+  @onEscape: modules.Base.terminate()
+
+  TextList
+    id: moduleList
+    anchors.fill: parent
+    margin-right: 20
+    margin-left: 410
+    margin-top: 25
+    margin-bottom: 88
+    padding: 3
+    focusable: false
+    vertical-scrollbar: moduleListScrollBar
+
+  VerticalScrollBar
+    id: moduleListScrollBar
+    anchors.top: moduleList.top
+    anchors.bottom: moduleList.bottom
+    anchors.left: moduleList.right 
+    step: 14
+    pixels-scroll: true
+    
+  Button
+    !text: tr('Fechar')
+    image-color: #8470FF
+    width: 64
+    height: 15
+    anchors.right: parent.right
+    anchors.top: parent.top  
+    @onClick: modules.Base.terminate()
+
+  Button   
+    id: image 
+    anchors.fill: parent
+    margin-right: 376
+    margin-left: 34
+    margin-top: 50
+    margin-bottom: 355
+    image-size: 203 156
+    image-smooth: false
+    image-clip: 0 0 0 0
+    image-source: /images/pokeDesigners/none
+
+  Label
+    id: currentHotkeysLabel
+    !text: tr('Informoções sobre o pokemon:')
+    anchors.fill: parent
+    margin-right: 320
+    margin-left: 60
+    margin-top: 255
+    margin-bottom: 140
+    padding: 20
+
+  MultilineTextEdit
+    id: text
+    background-color: #00F5FF
+    anchors.fill: parent
+    margin-right: 307
+    margin-left: 15
+    margin-top: 273
+    margin-bottom: 18
+    vertical-scrollbar: textScroll
+    text-wrap: true
+    editable: false
+
+  VerticalScrollBar
+    id: textScroll
+    anchors.fill: parent
+    margin-right: 307
+    margin-left: 290
+    margin-top: 273
+    margin-bottom: 18
+    step: 16
+    pixels-scroll: true 

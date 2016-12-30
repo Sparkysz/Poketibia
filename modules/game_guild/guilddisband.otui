@@ -1,0 +1,28 @@
+MainWindow
+  id: disbandGuildWindow
+  text: Disband Guild
+  height: 90
+  width: 260
+  visible: false
+  CheckBox
+    id: disbandGuildBox
+    text: Are you sure want undo the guild?
+    anchors.top: parent.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    @onCheckChange: self:getParent():getChildById('buttonOk'):setEnabled(self:isChecked())
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    enabled: false
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: disbandGuild()

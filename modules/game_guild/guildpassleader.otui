@@ -1,0 +1,40 @@
+MainWindow
+  id: passLeaderGuildWindow
+  text: Pass Leader
+  height: 130
+  width: 260
+  visible: false
+  Label
+    id: passLeaderGuildLabel
+    text: Player Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: passLeaderGuildText
+    anchors.top: passLeaderGuildLabel.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  CheckBox
+    id: passLeaderGuildBox
+    text: Are you sure you want to do this?
+    anchors.top: passLeaderGuildText.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 25
+    @onCheckChange: self:getParent():getChildById('buttonOk'):setEnabled(self:isChecked())
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    enabled: false
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: passLeaderGuild()

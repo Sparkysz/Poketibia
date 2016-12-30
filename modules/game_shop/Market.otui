@@ -1,0 +1,82 @@
+Panel
+  HorizontalSeparator
+    height: 7
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    margin-top: -12
+
+  VerticalScrollBar
+    id: scrollBar
+    step: 50
+    pixels-scroll: true
+    anchors.top: parent.top
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-bottom: 30
+    margin-top: 60
+
+  ScrollablePanel
+    vertical-scrollbar: scrollBar
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: scrollBar.left
+    anchors.bottom: parent.bottom
+    margin-right: 3
+    margin-bottom: 30
+    margin-top: 60
+
+    Button1
+      id: 1
+      !tooltip: tr('Vip Day')
+      image-source: /images/shop/1
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 0
+      @onClick: g_game.talk("@buy VIP30") 
+
+    Button1
+      id: 2
+      !tooltip: tr('Vip Day')
+      image-source: /images/shop/2
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 50
+      @onClick: g_game.talk("@buy VIP60") 
+
+    Button1
+      id: 3
+      !tooltip: tr('Vip Day')
+      image-source: /images/shop/3
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 100
+      @onClick: g_game.talk("@buy VIP90")
+
+    Button1
+      id: 4
+      !tooltip: tr('Ditto')
+      image-source: /images/shop/4
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 150
+      @onClick: g_game.talk("@buy Ditto")
+
+    Button1
+      id: 5
+      !tooltip: tr('Shiny Ditto')
+      image-source: /images/shop/5
+      width: 415
+      height: 48
+      anchors.top: parent.top
+      anchors.left: parent.left
+      margin-top: 200
+      @onClick: g_game.talk("@buy Shiny Ditto")

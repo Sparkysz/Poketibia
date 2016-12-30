@@ -1,0 +1,141 @@
+MainWindow
+  id: optionsWindow
+  text: Moves
+  size: 65 490
+  focusable: false
+  &save: true
+
+  UIButton
+    id: Button1
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 2
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m1')
+
+  UIButton
+    id: Button2
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 40
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m2')
+
+  UIButton
+    id: Button3
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 78
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m3')
+
+  UIButton
+    id: Button4
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 116
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m4')
+
+  UIButton
+    id: Button5
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 154
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m5')
+
+  UIButton
+    id: Button6
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 192
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m6')
+
+  UIButton
+    id: Button7
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 230
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m7')
+
+  UIButton
+    id: Button8
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 268
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m8')
+
+  UIButton
+    id: Button9
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 306
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m9')
+
+  UIButton
+    id: Button10
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 344
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m10')
+
+  UIButton
+    id: Button11
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 382
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m11')
+
+  UIButton
+    id: Button12
+    !tooltip: ''
+    anchors.fill: parent
+    anchors.bottom: text.bottom
+    margin-top: 420
+    size: 32 32
+    image-source: /cdBar/imagens/Base.png
+    image-clip: 0 0 0 0
+    @onClick: g_game.talk('m12')
+
+  @onEnter: cdBar.hide()
+  @onEscape: cdBar.hide()

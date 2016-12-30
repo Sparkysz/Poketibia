@@ -1,0 +1,13 @@
+Module
+  name: Som
+  description: Som
+  author: Caotic
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ som ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

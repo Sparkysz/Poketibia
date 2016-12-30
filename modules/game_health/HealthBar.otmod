@@ -1,0 +1,13 @@
+Module
+  name: HealthBar
+  description: HealthBar pxg
+  author: Slicer (xTibia)
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ HealthBar ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

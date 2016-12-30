@@ -1,0 +1,31 @@
+MainWindow
+  id: demoteGuildWindow
+  text: Demote Player
+  height: 110
+  width: 260
+  visible: false
+  Label
+    id: demoteGuildLabel
+    text: Player Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: demoteGuildText
+    anchors.top: demoteGuildLabel.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: demoteGuild()

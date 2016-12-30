@@ -1,0 +1,41 @@
+MainWindow
+  id: createChannel
+  text: Criar um Canal
+  height: 140
+  width: 260
+  visible: false
+  
+  TextEdit
+    id: createChannelText1
+    text: Nome do Canal
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    width: 220
+    margin-bottom: 60
+    margin-top: 10
+    
+  TextEdit
+    id: createChannelText2
+    text: Descrição
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    width: 220
+    margin-bottom: 30
+    margin-top: 90
+    
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: modules.tvCam.termiCreateChannel()
+    
+  Button
+    id: buttonOk
+    text: Criar
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: modules.tvCam.CreateChannel()

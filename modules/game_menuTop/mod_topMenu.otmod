@@ -1,0 +1,13 @@
+Module
+  name: mod_topMenu
+  description: topMenu pxg
+  author: Slicer (xTibia)
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ mod_topMenu ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

@@ -1,0 +1,65 @@
+LocalesButtons < UIWidget
+  image-size: 250 50
+  image-smooth: true
+  image-clip: 0 250 250 50
+  anchors.horizontalCenter: parent.horizontalCenter
+  anchors.verticalCenter: parent.verticalCenter
+  margin-top: -160
+  
+OptionCheckBox < CheckBox
+  @onCheckChange: modules.client_options.setOption(self:getId(), self:isChecked())
+  height: 16
+
+  $first:
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+
+  $!first:
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: prev.bottom
+    margin-top: 10
+
+OptionScrollbar < HorizontalScrollBar
+  step: 1
+  @onValueChange: modules.client_options.setOption(self:getId(), self:getValue())
+
+MainWindow
+  id: shopWindow
+  image-source: /images/ui/pxg/zito10
+  !text: tr('')
+  size: 592 370
+  @onClose: modules.game_shop.onMainWindowClose()
+  &save: true
+
+  @onEnter: modules.client_options.hide()
+  @onEscape: modules.client_options.hide()
+
+  TabBar1Vertical
+    id: optionsTabBar
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    margin-top: 3
+
+  Panel1
+    id: optionsTabContent
+    anchors.top: optionsTabBar.top
+    anchors.left: optionsTabBar.right
+    anchors.right: parent.right
+    anchors.bottom: optionsTabBar.bottom
+    margin-left: 10
+    margin-bottom: 10
+
+  Button2
+    image-source: /images/fechar
+    !text: tr('')
+    width: 38
+    height: 21
+    color: #ffffffff
+    margin-bottom: 285
+    margin-right: 0
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    @onClick: modules.Shop.hide()

@@ -1,0 +1,34 @@
+LocalesMainLabel < Label
+  font: sans-bold-16px
+
+LocalesButton < UIWidget
+  image-size: 120 400
+  image-smooth: true
+  image-clip: 0 197 197 671
+  text-offset: 0 -120
+  font: verdana-11px-antialised
+
+UIWindow
+  id: localesWindow
+  background-color: #000000
+  opacity: 0.80
+  clipping: true
+  anchors.fill: parent
+
+  LocalesMainLabel
+    !text: tr('Selecione a sua Skin')
+    text-auto-resize: true
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.verticalCenter: parent.verticalCenter
+    margin-top: -330
+
+  Panel
+    id: localesPanel
+    margin-top: 1
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.top: prev.bottom
+    anchors.bottom: parent.bottom
+    layout:
+      type: grid
+      cell-size: 120 285
+      flow: true 

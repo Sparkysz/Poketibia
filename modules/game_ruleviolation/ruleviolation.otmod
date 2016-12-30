@@ -1,0 +1,9 @@
+Module
+  name: game_ruleviolation
+  description: Rule violation interface (Ctrl+Y)
+  author: andrefaramir
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ ruleviolation ]
+  @onLoad: init()
+  @onUnload: terminate()

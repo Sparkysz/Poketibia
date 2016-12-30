@@ -1,0 +1,9 @@
+Module
+  name: game_playerdeath
+  description: Manage player deaths
+  author: BeniS, edubart
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ playerdeath ]
+  @onLoad: init()
+  @onUnload: terminate()

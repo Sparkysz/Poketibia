@@ -1,0 +1,47 @@
+MainWindow
+  size: 642 454
+  --image-source: /images/pokedex
+  --image-size: 642 454
+  opacity: 2
+
+  Panel
+  ScrollablePanel
+    id: consoleBuffer
+    anchors.fill: parent
+    margin-right: 20
+    margin-left: 410
+    margin-top: 30
+    margin-bottom: 90
+    vertical-scrollbar: consoleScrollBar
+    layout:
+      type: verticalBox
+      align-bottom: true
+    inverted-scroll: true
+    padding: 1
+    
+  Button
+    !text: tr('Ok')
+    width: 100
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom  
+    vertical-scrollbar: consoleScrollBar
+    @onClick: modules.client_locales.endPokedex()
+
+  VerticalScrollBar
+    id: consoleScrollBar
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    margin-right: 20
+    margin-left: 410
+    margin-top: 30
+    margin-bottom: 90
+    step: 14
+    pixels-scroll: true
+    
+  Button
+    !text: tr('Ok')
+    width: 64
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom  
+    @onClick: modules.client_locales.endPokedex()

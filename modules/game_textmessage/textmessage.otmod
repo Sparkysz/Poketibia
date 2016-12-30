@@ -1,0 +1,9 @@
+Module
+  name: game_textmessage
+  description: Manage game text messages
+  author: edubart
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ textmessage ]
+  @onLoad: init()
+  @onUnload: terminate()

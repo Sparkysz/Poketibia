@@ -1,0 +1,31 @@
+MainWindow
+  id: revokeGuildWindow
+  text: Revoke Player
+  height: 110
+  width: 260
+  visible: false
+  Label
+    id: revokeGuildLabel
+    text: Player Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: revokeGuildText
+    anchors.top: revokeGuildLabel.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: revokeGuild()

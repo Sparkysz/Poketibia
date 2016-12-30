@@ -1,0 +1,11 @@
+Module
+  name: client_changelog
+  description: Convey your latest changes
+  author: Summ
+  website: http://otland.net/members/summ.17398/
+  sandboxed: true
+  autoload: true
+  autoload-priority: 1000
+  scripts: [ changelog ]
+  @onLoad: init()
+  @onUnload: terminate()

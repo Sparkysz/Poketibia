@@ -1,0 +1,11 @@
+Module
+  name: tvCam
+  description: ...
+  author: SmiX
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ tvCam ]
+  sandboxed: true

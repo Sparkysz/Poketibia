@@ -1,0 +1,43 @@
+MainWindow
+  id: nickGuildWindow
+  text: Nick Player
+  height: 165
+  width: 260
+  visible: false
+  Label
+    id: nickGuildLabel1
+    text: Player Name
+    anchors.top: parent.top
+    anchors.left: parent.left
+  TextEdit
+    id: nickGuildText1
+    anchors.top: nickGuildLabel1.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Label
+    id: nickGuildLabel2
+    text: Nick Name
+    anchors.top: nickGuildText1.top
+    anchors.left: parent.left
+    margin-top: 30
+  TextEdit
+    id: nickGuildText2
+    anchors.top: nickGuildLabel2.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    margin-top: 17
+  Button
+    id: buttonCancel
+    text: Cancel
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    @onClick: guildCancel()
+  Button
+    id: buttonOk
+    text: Ok
+    width: 109
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: nickGuild()

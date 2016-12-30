@@ -1,0 +1,8 @@
+Module
+  name: game_guild
+  description: Displays health, mana points, soul points, and conditions
+  author: edubart, BeniS
+  website: www.otclient.info
+  sandboxed: true
+  scripts: [ guild ]
+  @onLoad: init()

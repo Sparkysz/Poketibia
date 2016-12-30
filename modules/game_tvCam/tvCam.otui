@@ -1,0 +1,124 @@
+ModuleListLabelTvCam < Label
+  font: verdana-11px-monochrome
+  background-color: alpha
+  text-offset: 2 0
+  focusable: true
+  color: #cccccc
+
+  $focus:
+    background-color: #8A2BE2
+
+  $on:
+    background-color: #8A2BE2
+
+    
+ModuleInfoLabelTvCam < Label
+  $!first:
+    margin-top: 5
+  margin-bottom: 2
+
+ModuleValueLabelTvCam < FlatLabel
+  font: verdana-11px-antialised
+  color: #aaaaaa
+  text-offset: 2 3
+  padding-bottom: 5
+  height: 20
+  
+MainWindow
+  id: moduleManagerWindowtvCam
+  image-source: /images/tvCam/tvCamChannel
+  size: 400 400
+  opacity: 2
+  
+  TextList
+    id: moduleListTvCam
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    width: 190
+    padding: 1
+    focusable: false
+    margin-bottom: 20
+    margin-top: 60
+    vertical-scrollbar: moduleListScrollBarTvCam
+
+  VerticalScrollBar
+    id: moduleListScrollBarTvCam
+    anchors.top: moduleListTvCam.top
+    anchors.bottom: moduleListTvCam.bottom
+    anchors.left: moduleListTvCam.right 
+    step: 14
+    pixels-scroll: true
+    
+  Label
+    id: currentHotkeysLabel
+    !text: tr('Canais:')
+    anchors.fill: parent
+    margin-left: 1
+    margin-top: 45
+    padding: 20    
+  
+  Button
+    image-source: /images/tvCam/fechar
+    image-clip: 0 0 92 32
+    width: 92
+    height: 32
+    anchors.fill: parent
+    margin-left: 276
+    margin-top: 20
+    margin-bottom: 302
+    padding: 20   
+    @onClick: modules.tvCam.terminate()
+    
+    $hover !disabled:
+      image-source: /images/tvCam/fecharclick
+      image-clip: 0 0 92 32
+
+    $pressed:
+      image-source: /images/tvCam/fecharclick
+      image-clip: 0 0 92 32
+    
+  Button
+    image-source: /images/tvCam/assistir
+    image-clip: 0 0 92 32
+    width: 92
+    height: 32
+    anchors.top: prev.top
+    anchors.right: prev.left
+    @onClick: modules.tvCam.assistir()
+    
+    $hover !disabled:
+      image-source: /images/tvCam/assistirclick
+      image-clip: 0 0 92 32
+
+    $pressed:
+      image-source: /images/tvCam/assistirclick
+      image-clip: 0 0 92 32
+    
+  Label
+    id: currentHotkeysLabel
+    !text: tr('Descrição:')
+    anchors.fill: parent
+    margin-left: 220
+    margin-top: 65
+    padding: 20    
+    
+  MultilineTextEdit
+    id: textTvCam
+    background-color: #00F5FF
+    anchors.fill: parent
+    margin-right: 2
+    margin-left: 210
+    margin-top: 80
+    margin-bottom: 20
+    vertical-scrollbar: textScrollTvCam
+    text-wrap: true
+    editable: false
+
+  VerticalScrollBar
+    id: textScrollTvCam
+    anchors.top: textTvCam.top
+    anchors.bottom: textTvCam.bottom
+    anchors.left: textTvCam.right 
+    step: 16
+    pixels-scroll: true 
